@@ -1,0 +1,8 @@
+# These all packages important for project.
+# These all packages are sort and will download one by one automatically. 
+
+pandas==1.0.4
+nltk==3.5
+sklearn==0.0
+
+# These three packages required in project. 
