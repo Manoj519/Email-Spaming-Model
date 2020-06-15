@@ -11,7 +11,7 @@ Download project in "Email Spam" folder.
 
 ### 3.) Create Virtual Environment
 ###### Install Virtual Environment
-'Pip install virtualenv'<br/>
+```Pip install virtualenv```<br/>
 This command type in command prompt at specific location(eg. F:\Email Spam).<br/>
 Now here 2 folder and 4 files are present : <br/>
 A.) emailspam (Project)<br/>
