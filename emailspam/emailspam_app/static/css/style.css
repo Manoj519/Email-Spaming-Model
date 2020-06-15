@@ -1,0 +1,95 @@
+/*styling the container*/
+.container{
+    margin: 0;
+    left: 0;
+    top:0;
+    padding: 0;
+}
+
+/*styling the row */
+.row{
+    margin: 0;
+    left: 0;
+    top:0;
+    padding: 0;
+}
+
+/*styling the home use with container*/
+.home{    
+    margin: 0;
+    left: 0;
+    top:0;
+    padding: 0;    
+}
+
+/*styling the header*/
+.header{    
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, rgba(98, 73, 232, 0.88) ,rgba(126, 108, 222, 0.65));
+}
+
+/*styling the header-line*/
+.header-line{
+    line-height: 100px;
+    margin: 0;
+}
+
+/*styling the middle part of page*/
+.middle{
+    width: 100%;
+    height: 470px;
+    background: url("../image/background.jpg");
+    background-size: 100% 100%;
+}
+
+/*styling the text-area class*/
+.text-area{
+    margin-top: 50px;
+    text-align: center;
+}
+
+/*styling the predict button class*/
+.predict-button{
+    text-align: center;
+    margin: 50px auto 0 auto;
+    
+}
+
+/*styling the predict button*/
+.button{
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    border-radius: 20px;
+    background: transparent;
+}
+
+/*styling the predict button:hover*/
+.button:hover{
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rgba(98, 73, 232, 0.88) ,rgba(126, 108, 222, 0.65));
+}
+
+/*styling the footer class*/
+.footer{
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(to top, rgba(98, 73, 232, 0.88) ,rgba(126, 108, 222, 0.65));
+}
+
+/*styling the icon class*/
+.icon{
+    text-align: center;
+}
+
+/*styling the icon of github and LinkedIn*/
+.contact-icon{
+    color: black;
+    text-align: center;
+    margin-left: 5px;
+}

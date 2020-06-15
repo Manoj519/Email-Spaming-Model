@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--  set the title of page.  -->
+<title>Email Spam</title>
+    
+<!--  set the CDN files of javascript, bootstrap and css.  -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!--    Sweet Alert Script-->
+<!--    <script src="sweetalert2.all.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<!--    Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+<!--    External css -->
+<link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+<!--    Create the header of page.    -->
+    <div class = "container-fluid home">
+        <div class = "row">
+            <div class="header">
+                <div class= "col-12">
+                    <h1 class = "header-line">Email Spam Classifier</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--    Create the middle of page.    -->
+    <div class = "container-fluid home" style="border: 2px solid black">
+        <div class = "row">
+            <div class="middle">
+                <div class= "col-12">
+                    <div class = "text-area">
+                    <p><b>A Machine Learning Model Using Django And Naive Bayes Algorithm</b></p>
+                    </div>
+                    <form action="../emailhit/" method="POST">
+                    {% csrf_token %}
+                    <div class = "text-area">
+                    <textarea rows="6" cols="100" name = "T1" placeholder="Enter The Message..." autofocus = autofocus></textarea>
+                    </div>
+                    <div class = "predict-button">
+                        <button class="button" type="submit">Predict</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--    Create the footer of page.    -->
+    <div class = "container-fluid home">
+        <div class = "row">
+            <div class="footer">
+                <div class= "col-12">
+                    <div class = "icon">
+                        <a target="_blank" href="https://github.com/anujvyas/Spam-SMS-Classifier-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
+                         <a target="_blank" href="www.linkedin.com/in/manoj5197"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+                        <p style="margin-bottom: 0;"><b>Manoj Goyal</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!--    check the value data   -->
+    {% if data %}
+
+<!--    Creating the js      -->
+<script>
+//  Use the sweetalert functions
+function set_sweetalert(){
+    if ('{{data}}' == 'spam'){
+        Swal.fire({
+              title: 'SPAM!',
+              text: 'This Email Is Spam!',
+              icon: 'info'
+        })
+    }else if ('{{data}}' == 'ham'){
+        Swal.fire({
+              title: 'HAM!',
+              text: 'Gotcha! You Are Safe Now!',
+              icon: 'success'
+        })
+    }else{
+        Swal.fire({
+              title: 'ERROR',
+              text: '{{data}}',
+              icon: 'error'
+        })
+    }
+};
+    
+//Call the function when page is load
+window.onload = function(){
+    set_sweetalert();
+};
+
+// End of js 
+</script>
+{% endif %}
+</body>
+</html>
