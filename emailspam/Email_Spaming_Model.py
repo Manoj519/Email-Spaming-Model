@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 
 # Load dataset and read csv file.
-email_file = r"F:\manoj\emailspam\spam.csv"
+email_file = r"emailspam_app\static\csv\email.csv"
 email = pd.read_csv(email_file)
 email
 
