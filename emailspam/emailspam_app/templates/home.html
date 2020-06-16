@@ -40,10 +40,10 @@
                     <form action="../emailhit/" method="POST">
                     {% csrf_token %}
                     <div class = "text-area">
-                    <textarea rows="6" cols="100" name = "T1" placeholder="Enter The Message..." autofocus = autofocus></textarea>
+                    <textarea rows="6" cols="100" name = "T1" id = "textsend" onkeyup="success()" placeholder="Enter The Message..." autofocus = autofocus></textarea>
                     </div>
                     <div class = "predict-button">
-                        <button class="button" type="submit">Predict</button>
+                        <button class="button" id = "button" type="submit" disabled style="display: none; margin: auto;">Predict</button>
                     </div>
                     </form>
                 </div>
@@ -58,7 +58,7 @@
                 <div class= "col-12">
                     <div class = "icon">
                         <a target="_blank" href="https://github.com/Manoj519/Email-Spaming-Model"><i class="fab fa-github fa-lg contact-icon"></i></a>
-                         <a target="_blank" href="www.linkedin.com/in/manoj5197"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+                         <a target="_blank" href="https://linkedin.com/in/manoj5197"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
                         <p style="margin-bottom: 0;"><b>Manoj Goyal</b></p>
                     </div>
                 </div>
@@ -96,11 +96,22 @@ function set_sweetalert(){
     
 //Call the function when page is load
 window.onload = function(){
-    set_sweetalert();
+    document.getElementById("button").onclick = set_sweetalert();
 };
 
 // End of js 
 </script>
 {% endif %}
+<script>
+function success() {
+    if(document.getElementById("textsend").value==="") { 
+        document.getElementById('button').disabled = true;
+        document.getElementById('button').style.display = "none";
+    } else { 
+        document.getElementById('button').disabled = false;
+        document.getElementById('button').style.display = "block";
+    }
+}
+</script>
 </body>
 </html>
