@@ -12,8 +12,11 @@ def predict_email(msg):
     # Then passes through CountVectorizer.
     email_arr = cv.transform(email_pre)
     
-    # Then Predict the email (spam or ham)
-    email_post = model.predict(email_arr)
+    if (email_arr.shape == (0,7274)):
+        email_post = ['ham']
+    else:
+        # Then Predict the email (spam or ham)
+        email_post = model.predict(email_arr)
     
     # return the output.
     return email_post[0]

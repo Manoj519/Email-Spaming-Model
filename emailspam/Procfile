@@ -1,0 +1,1 @@
+web: gunicorn emailspam.wsgi --log-file -

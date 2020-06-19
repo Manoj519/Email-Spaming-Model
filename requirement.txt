@@ -1,9 +1,0 @@
-# These all packages important for project.
-# These all packages are sort and will download one by one automatically. 
-
-Django==3.0.7
-pandas==1.0.4
-nltk==3.5
-sklearn==0.0
-
-# These four packages required in project. 
